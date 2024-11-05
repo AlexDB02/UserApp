@@ -15,9 +15,26 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: Color.fromARGB(255, 117, 57, 173),
       ),
       body: Container(
-        //color: Color.fromARGB(255, 150, 117, 181),
         child: Center(
-          child: ElevatedButton(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center, // Centra el contenido verticalmente
+            children: [
+
+              // Texto de bienvenida
+              Text(
+                'Por favor, crea un usuario para iniciar.',
+                style: TextStyle(
+                  fontSize: 24, 
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
+                textAlign: TextAlign.center, // Centra el texto
+              ),
+
+          // Divider
+          Divider(color: Colors.black.withOpacity(0)),
+
+          ElevatedButton(
             style: ElevatedButton.styleFrom(
               backgroundColor: Color.fromARGB(255, 117, 57, 173)
             ),
@@ -26,8 +43,8 @@ class HomeScreen extends StatelessWidget {
             },
             child: const Text('Crea tu perfil', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),),
           ),
-        ),
+        ]),
       ),
-    );
+    ));
   }
 }
