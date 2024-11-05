@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => HomeScreen(),
-        '/create': (context) => crearPerfilScreen(),
+        '/create': (context) => CrearPerfilScreen(),
         '/profile': (context) {
           
           final args = ModalRoute.of(context)?.settings.arguments as Map<String, String>?;

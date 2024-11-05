@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class crearPerfilScreen extends StatelessWidget {
+class CrearPerfilScreen extends StatelessWidget {
   final TextEditingController nameController = TextEditingController();
   final TextEditingController ageController = TextEditingController();
   final TextEditingController occupationController = TextEditingController();
 
-  crearPerfilScreen({super.key});
+  CrearPerfilScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,131 +18,144 @@ class crearPerfilScreen extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Color.fromARGB(255, 117, 57, 173),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            // Field de Nombre
-            Container(
-              height: 70,
-              width: 650,
-              child: TextFormField(
-                controller: nameController,
-                decoration: const InputDecoration(
-                    filled: true,
-                    fillColor: Colors.white,
-                    labelStyle:
-                        TextStyle(color: Color.fromARGB(255, 117, 57, 173)),
-                    focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                            color: Color.fromARGB(255, 117, 57, 173),
-                            width: 2.0)),
-                    border: OutlineInputBorder(
-                        borderSide: BorderSide(
-                            color: Color.fromARGB(255, 117, 57, 173))),
-                    labelText: 'Nombre'),
-              ),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(50.0),
+          child: Container(
+            width: double.infinity, // Ancho completo
+            padding: const EdgeInsets.all(30), // Padding interno
+            decoration: BoxDecoration(
+              color: Colors.white, // Fondo blanco
+              borderRadius: BorderRadius.circular(20), // Bordes redondeados
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.1),
+                  blurRadius: 10,
+                  offset: Offset(0, 5), // Sombra sutil
+                ),
+              ],
             ),
-
-            // Field de Edad
-            Container(
-              height: 70,
-              width: 650,
-              child: TextFormField(
-                controller: ageController,
-                decoration: const InputDecoration(
-                    filled: true,
-                    fillColor: Colors.white,
-                    labelStyle:
-                        TextStyle(color: Color.fromARGB(255, 117, 57, 173)),
-                    focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                            color: Color.fromARGB(255, 117, 57, 173),
-                            width: 2.0)),
-                    border: OutlineInputBorder(
-                        borderSide: BorderSide(
-                            color: Color.fromARGB(255, 117, 57, 173))),
-                    labelText: 'Edad'),
-              ),
-            ),
-
-            // Field para Ocupacion
-            Container(
-              height: 70,
-              width: 650,
-              child: TextFormField(
-                controller: occupationController,
-                decoration: const InputDecoration(
-                    filled: true,
-                    fillColor: Colors.white,
-                    labelStyle:
-                        TextStyle(color: Color.fromARGB(255, 117, 57, 173)),
-                    focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                            color: Color.fromARGB(255, 117, 57, 173),
-                            width: 2.0)),
-                    border: OutlineInputBorder(
-                        borderSide: BorderSide(
-                            color: Color.fromARGB(255, 117, 57, 173))),
-                    labelText: 'Ocupacion'),
-              ),
-            ),
-            const SizedBox(height: 20),
-
-            // Botón de guardar y ver perfil
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Color.fromARGB(255, 117, 57, 173),
-              ),
-              onPressed: () {
-
-                // Validaciones
-                if (nameController.text.trim().isEmpty ||
-                    ageController.text.trim().isEmpty ||
-                    occupationController.text.trim().isEmpty) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text(
-                          'Por favor, complete los campos antes de continuar.'),
-                      backgroundColor: Colors.red,
+            child: Column(
+              mainAxisSize: MainAxisSize.min, // Que solo ocupe el espacio necesario
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                // Campo para Nombre
+                Container(
+                  height: 70,
+                  width: double.infinity,
+                  margin: EdgeInsets.only(bottom: 15),
+                  child: TextFormField(
+                    controller: nameController,
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.white,
+                      labelText: 'Nombre',
+                      labelStyle: TextStyle(color: Color.fromARGB(255, 117, 57, 173)),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Color.fromARGB(255, 117, 57, 173), width: 2.0),
+                      ),
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(color: Color.fromARGB(255, 117, 57, 173)),
+                      ),
                     ),
-                  );
-                } else {
+                  ),
+                ),
 
-                  final ageText = ageController.text.trim();
-                  final age = int.tryParse(ageText);
-
-                  if (age == null || age <=0 ){
-                    ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text(
-                          'Por favor, ingrese una edad válida.'),
-                      backgroundColor: Colors.red,
+                // Campo para Edad
+                Container(
+                  height: 70,
+                  width: double.infinity,
+                  margin: EdgeInsets.only(bottom: 15),
+                  child: TextFormField(
+                    controller: ageController,
+                    keyboardType: TextInputType.number,
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.white,
+                      labelText: 'Edad',
+                      labelStyle: TextStyle(color: Color.fromARGB(255, 117, 57, 173)),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Color.fromARGB(255, 117, 57, 173), width: 2.0),
+                      ),
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(color: Color.fromARGB(255, 117, 57, 173)),
+                      ),
                     ),
-                  );
-                  } else {
+                  ),
+                ),
 
-                    final profileData = {
-                    'name': nameController.text,
-                    'age': ageController.text,
-                    'occupation': occupationController.text,
-                  };
+                // Campo para Ocupación
+                Container(
+                  height: 70,
+                  width: double.infinity,
+                  margin: EdgeInsets.only(bottom: 15),
+                  child: TextFormField(
+                    controller: occupationController,
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.white,
+                      labelText: 'Ocupación',
+                      labelStyle: TextStyle(color: Color.fromARGB(255, 117, 57, 173)),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Color.fromARGB(255, 117, 57, 173), width: 2.0),
+                      ),
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(color: Color.fromARGB(255, 117, 57, 173)),
+                      ),
+                    ),
+                  ),
+                ),
 
-                  Navigator.pushNamed(
-                    context,
-                    '/profile',
-                    arguments: profileData,
-                  );
-                  }
-                }
-              },
-              child: const Text(
-                'Guardar y ver perfil',
-                style:
-                    TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
-              ),
+                // Botón de Guardar y Ver Perfil
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color.fromARGB(255, 117, 57, 173),
+                  ),
+                  onPressed: () {
+                    // Validaciones
+                    if (nameController.text.trim().isEmpty ||
+                        ageController.text.trim().isEmpty ||
+                        occupationController.text.trim().isEmpty) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text('Por favor, complete los campos antes de continuar.'),
+                          backgroundColor: Colors.red,
+                        ),
+                      );
+                    } else {
+                      final ageText = ageController.text.trim();
+                      final age = int.tryParse(ageText);
+
+                      if (age == null || age <= 0) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text('Por favor, ingrese una edad válida.'),
+                            backgroundColor: Colors.red,
+                          ),
+                        );
+                      } else {
+                        final profileData = {
+                          'name': nameController.text,
+                          'age': ageController.text,
+                          'occupation': occupationController.text,
+                        };
+
+                        Navigator.pushNamed(
+                          context,
+                          '/profile',
+                          arguments: profileData,
+                        );
+                      }
+                    }
+                  },
+                  child: Text(
+                    'Ver perfil',
+                    style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+                  ),
+                ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );

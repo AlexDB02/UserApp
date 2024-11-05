@@ -19,28 +19,54 @@ class perfilScreen extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Color.fromARGB(255, 117, 57, 173),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('Nombre: $name', style: TextStyle(fontSize: 20)),
-            Divider(color: Colors.black.withOpacity(0)),
-            Text('Edad: $age', style: TextStyle(fontSize: 20)),
-            Divider(color: Colors.black.withOpacity(0)),
-            Text('Ocupación: $occupation', style: TextStyle(fontSize: 20)),
-            Divider(color: Colors.black.withOpacity(0)),
-            SizedBox(height: 20),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-              backgroundColor: Color.fromARGB(255, 117, 57, 173)
+      
+      body: Center( 
+        child: Padding(
+          padding: const EdgeInsets.all(50.0),
+          child: Container(
+            width: double.infinity, 
+            padding: const EdgeInsets.all(50), 
+            decoration: BoxDecoration(
+              color: Colors.white, // Fondo blanco
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.1),
+                  blurRadius: 10,
+                  offset: Offset(0, 5),
+                ),
+              ],
             ),
-              onPressed: () {
-                Navigator.popUntil(context, (route) => route.isFirst);
-              },
-              child: Text('Regresar a Inicio', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),),
+            child: Column(
+              mainAxisSize: MainAxisSize.min, 
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text('Nombre', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                Text(name),
+
+                Divider(color: Colors.black.withOpacity(0)),
+
+                Text('Edad', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                Text(age),
+
+                Divider(color: Colors.black.withOpacity(0)),
+
+                Text('Ocupación', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                Text(occupation),
+
+                SizedBox(height: 20),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Color.fromARGB(255, 117, 57, 173)
+                  ),
+                  onPressed: () {
+                    Navigator.popUntil(context, (route) => route.isFirst);
+                  },
+                  child: Text('Regresar a Inicio', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white)),
+                ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );
