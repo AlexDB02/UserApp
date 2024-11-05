@@ -16,7 +16,7 @@ class CrearPerfilScreen extends StatelessWidget {
           style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
         ),
         centerTitle: true,
-        backgroundColor: Color.fromARGB(255, 117, 57, 173),
+        backgroundColor: Color.fromARGB(255, 227, 131, 6),
       ),
       body: Center(
         child: Padding(
@@ -50,12 +50,12 @@ class CrearPerfilScreen extends StatelessWidget {
                       filled: true,
                       fillColor: Colors.white,
                       labelText: 'Nombre',
-                      labelStyle: TextStyle(color: Color.fromARGB(255, 117, 57, 173)),
+                      labelStyle: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Color.fromARGB(255, 117, 57, 173), width: 2.0),
+                        borderSide: BorderSide(color: Color.fromARGB(255, 227, 131, 6), width: 2.0),
                       ),
                       border: OutlineInputBorder(
-                        borderSide: BorderSide(color: Color.fromARGB(255, 117, 57, 173)),
+                        borderSide: BorderSide(color: Color.fromARGB(255, 227, 131, 6)),
                       ),
                     ),
                   ),
@@ -73,12 +73,12 @@ class CrearPerfilScreen extends StatelessWidget {
                       filled: true,
                       fillColor: Colors.white,
                       labelText: 'Edad',
-                      labelStyle: TextStyle(color: Color.fromARGB(255, 117, 57, 173)),
+                      labelStyle: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Color.fromARGB(255, 117, 57, 173), width: 2.0),
+                        borderSide: BorderSide(color: Color.fromARGB(255, 227, 131, 6), width: 2.0),
                       ),
                       border: OutlineInputBorder(
-                        borderSide: BorderSide(color: Color.fromARGB(255, 117, 57, 173)),
+                        borderSide: BorderSide(color: Color.fromARGB(255, 227, 131, 6)),
                       ),
                     ),
                   ),
@@ -95,12 +95,12 @@ class CrearPerfilScreen extends StatelessWidget {
                       filled: true,
                       fillColor: Colors.white,
                       labelText: 'Ocupación',
-                      labelStyle: TextStyle(color: Color.fromARGB(255, 117, 57, 173)),
+                      labelStyle: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Color.fromARGB(255, 117, 57, 173), width: 2.0),
+                        borderSide: BorderSide(color: Color.fromARGB(255, 227, 131, 6), width: 2.0),
                       ),
                       border: OutlineInputBorder(
-                        borderSide: BorderSide(color: Color.fromARGB(255, 117, 57, 173)),
+                        borderSide: BorderSide(color: Color.fromARGB(255, 227, 131, 6)),
                       ),
                     ),
                   ),
@@ -109,7 +109,7 @@ class CrearPerfilScreen extends StatelessWidget {
                 // Botón de Guardar y Ver Perfil
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color.fromARGB(255, 117, 57, 173),
+                    backgroundColor: Color.fromARGB(255, 227, 131, 6),
                   ),
                   onPressed: () {
                     // Validaciones

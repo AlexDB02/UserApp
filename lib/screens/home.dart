@@ -12,7 +12,7 @@ class HomeScreen extends StatelessWidget {
           style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
         ),
         centerTitle: true,
-        backgroundColor: Color.fromARGB(255, 117, 57, 173),
+        backgroundColor: Color.fromARGB(255, 227, 131, 6),
       ),
       body: Container(
         child: Center(
@@ -36,7 +36,7 @@ class HomeScreen extends StatelessWidget {
 
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-              backgroundColor: Color.fromARGB(255, 117, 57, 173)
+              backgroundColor: Color.fromARGB(255, 227, 131, 6)
             ),
             onPressed: () {
               Navigator.pushNamed(context, '/create');

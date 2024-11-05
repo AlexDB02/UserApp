@@ -17,7 +17,7 @@ class perfilScreen extends StatelessWidget {
           style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
         ),
         centerTitle: true,
-        backgroundColor: Color.fromARGB(255, 117, 57, 173),
+        backgroundColor: Color.fromARGB(255, 227, 131, 6),
       ),
       
       body: Center( 
@@ -57,7 +57,7 @@ class perfilScreen extends StatelessWidget {
                 SizedBox(height: 20),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                      backgroundColor: Color.fromARGB(255, 117, 57, 173)
+                      backgroundColor: Color.fromARGB(255, 227, 131, 6)
                   ),
                   onPressed: () {
                     Navigator.popUntil(context, (route) => route.isFirst);
